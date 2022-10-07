@@ -24,21 +24,21 @@ stages:
         train.batch_size: 128
         train.dropout: 0.4
         train.hidden_units: 64
-        train.lr: 0.01
+        train.lr: 0.001
         train.num_epochs: 10
     outs:
     - path: dvclive/metrics.json
-      md5: 2a200bfe36e6f58899b970b8836c5b49
+      md5: e68feaf9815f8bbeaeee149f5aab92be
       size: 53
     - path: dvclive/plots/metrics/accuracy.tsv
-      md5: 9578dd3f6a5855b986cee450e5190f8c
-      size: 224
+      md5: ca559161111a6df3e1e5dd061fac242a
+      size: 221
     - path: output/model.h5
-      md5: 11606ecea4e37e00a4a9365d8724533c
+      md5: 24df0a9ca7e3afd9e1605a21457f31cc
       size: 3681752
     - path: output/train_logs.csv
-      md5: 11d73f60baa2524742e231421fc08b91
-      size: 426
+      md5: 660be79bcfb3210b63b020f9c0226bca
+      size: 420
   evaluate:
     cmd: python src/evaluate.py
     deps:
