@@ -18,12 +18,7 @@ stages:
     - train.num_epochs
     outs:
     - output/model.h5
-    metrics:
-    - dvclive/metrics.json:
-        cache: false
     plots:
-    - dvclive/plots/metrics/accuracy.tsv:
-        cache: false
     - output/train_logs.csv:
         cache: false
         template: linear
@@ -35,9 +30,6 @@ stages:
     - output/data.pkl
     - output/model.h5
     - src/evaluate.py
-    metrics:
-    - output/metrics.json:
-        cache: false
     plots:
     - output/predictions.json:
         cache: false

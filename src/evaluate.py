@@ -24,9 +24,9 @@ model = tensorflow.keras.models.load_model(model_file)
 metrics_dict = model.evaluate(x_test, y_test, return_dict=True)
 print(metrics_dict)
 
-METRICS_FILE = os.path.join(OUTPUT_DIR, "metrics.json")
-with open(METRICS_FILE, "w") as f:
-    f.write(json.dumps(metrics_dict))
+# METRICS_FILE = os.path.join(OUTPUT_DIR, "metrics.json")
+# with open(METRICS_FILE, "w") as f:
+#     f.write(json.dumps(metrics_dict))
 
 pred_probabilities = model.predict(x_test)
 predictions = np.argmax(pred_probabilities, axis=1)
