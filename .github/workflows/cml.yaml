@@ -19,10 +19,13 @@ jobs:
         env:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           STUDIO_TOKEN: ${{ secrets.STUDIO_TOKEN }}
+          INCORRECT_TOKEN: ${{ secrets.INCORRECT_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DVCLIVE_LOGLEVEL: DEBUG
         run: |
           # Reproduce pipeline if any changes detected in dependencies
+          echo $STUDIO_TOKEN
+          echo $INCORRECT_TOKEN
           dvc repro
 
           # # Publish confusion matrix diff
