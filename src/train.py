@@ -60,11 +60,11 @@ class AccuracyHistory(tensorflow.keras.callbacks.Callback):
         live.log_metric("accuracy", accuracy)
         live.next_step()
 
-# with Live() as live:
-#     history = model.fit(x_train, y_train, epochs=num_epochs, batch_size=batch_size, callbacks=[AccuracyHistory()], verbose=1)
+with Live() as live:
+    history = model.fit(x_train, y_train, epochs=num_epochs, batch_size=batch_size, callbacks=[AccuracyHistory()], verbose=1)
 
 
-history = model.fit(x_train, y_train, epochs=num_epochs, batch_size=batch_size, verbose=1)
+# history = model.fit(x_train, y_train, epochs=num_epochs, batch_size=batch_size, verbose=1)
 
 def history_to_csv(history):
     # This code is copied from https://github.com/iterative/get-started-experiments/
